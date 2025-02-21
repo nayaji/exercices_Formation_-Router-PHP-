@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Assurez-vous que les règles suivantes ne se déclenchent que lorsque le chemin ne correspond pas à un fichier ou répertoire existant
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirige toutes les autres demandes vers public/index.php
+RewriteRule ^(.*)$ public/index.php [L,QSA]
